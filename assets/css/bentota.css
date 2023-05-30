@@ -36,6 +36,22 @@ h1 {
   animation: slide-up 1s;
 }
 
+.hero {
+  background-image: url("../media/images/michelle-owens-PB_KWBFDclY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 160px 30px;
+  text-align: center;
+}
+
+.hero p {
+
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
