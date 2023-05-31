@@ -314,7 +314,7 @@ ul {
   height: auto;
 }
 
-.-img {
+.medium-img {
   width: 1000px !important;
   transition: transform 0.5s; /* Add transition for smooth effect */
   border-radius: 2%; /* Add rounded borders */
