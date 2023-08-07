@@ -722,4 +722,29 @@ ul {
 .baby-img {
   width: -webkit-fill-available;
 }
+
+/* Book Now button */
+.book-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-now a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  background-color: #d8d8d8;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  width: 9rem;
+}
+
+.book-now a:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
 /* Hikkaduwa Turtle Hatchery end*/
