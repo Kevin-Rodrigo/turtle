@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/media-queries.css">
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
     <script src="./assets/scripts/confirmation.js"></script>
 
     <script
@@ -27,7 +27,9 @@
       </div>
       <!-- Title -->
       <div class="title">
-        <h1>Buy Tickets</h1>
+        <a href="./">
+          <h1>Buy Tickets</h1>
+        </a>
       </div>
       <!-- Instructions -->
       <div class="instructions">
@@ -111,19 +113,13 @@
           </template>
           <tr class="ticket_charges_heading">
             <td>Total Payable</td>
-            <td
-              x-text="summaryTable.totalCharges"
-            ></td>
+            <td x-text="summaryTable.totalCharges"></td>
           </tr>
         </table>
       </div>
 
       <div class="continue_button">
-        <a
-          href="./index.html"
-          class="active"
-          >Buy Again!</a
-        >
+        <a href="./index.html" class="active">Buy Again!</a>
       </div>
     </section>
   </body>

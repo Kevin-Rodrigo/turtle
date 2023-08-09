@@ -203,13 +203,12 @@ thead {
 /* dates_guest_summary_container */
 
 .dates_guest {
-  margin-right: 20%;
+  width: 70%;
 }
 
 .dates_guest_summary_container {
   display: flex;
   justify-content: space-between;
-  /* max-width: 80%; */
 }
 
 .ticket_charges_heading {
@@ -296,7 +295,7 @@ thead {
 }
 
 .summary_table {
-  width: 60%;
+  /* width: 60%; */
 }
 
 .charges_table {
@@ -339,4 +338,8 @@ thead {
 .confirmation-messge p {
   font-size: 1.25rem ;
   font-style: italic;
+}
+
+.title a {
+  color: var(--white);
 }

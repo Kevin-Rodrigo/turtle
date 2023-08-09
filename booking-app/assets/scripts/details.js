@@ -1,3 +1,9 @@
+// For Phone field
+const input = document.querySelector("#mobilePhone");
+const phoneField = window.intlTelInput(input, {
+	utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+});
+
 const shouldDisablePurchase = (
 	fullname,
 	mobileNumber,
@@ -9,7 +15,8 @@ const shouldDisablePurchase = (
 		mobileNumber.value === "" ||
 		email.value === "" ||
 		confirmEmail.value === "" ||
-		!validateEmails(email, confirmEmail)
+		!validateEmails(email, confirmEmail) ||
+		!phoneField.isValidNumber()
 	);
 };
 
@@ -22,6 +29,12 @@ const validateField = (field) => {
 	if (field.touched && field.value === "") return false;
 	return true;
 };
+
+const validatePhoneField = (mobileNumber) => {
+	if (mobileNumber.touched) {
+		mobileNumber.isValid = phoneField.isValidNumber();
+	}
+}
 
 const getSummaryTable = () => {
 	const summaryTable = localStorage.getItem("summaryTable");

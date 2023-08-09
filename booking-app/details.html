@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/media-queries.css">
-    <script src="./assets/scripts/details.js"></script>
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css"
+    />
 
     <script
       defer
@@ -17,7 +20,7 @@
     x-data="{
       fullname: {touched: false, value: ''},
       gender: {touched: false, value: ''},
-      mobileNumber: {touched: false, value: ''},
+      mobileNumber: {touched: false, value: '', isValid: true},
       email: {touched: false, value: ''},
       confirmEmail: {touched: false, value: ''},
       summaryTable: getSummaryTable()
@@ -31,7 +34,9 @@
       </div>
       <!-- Title -->
       <div class="title">
-        <h1>Buy Tickets</h1>
+        <a href="./">
+          <h1>Buy Tickets</h1>
+        </a>
       </div>
       <!-- Instructions -->
       <div class="instructions">
@@ -90,9 +95,7 @@
           </template>
           <tr class="ticket_charges_heading">
             <td>Total Payable</td>
-            <td
-              x-text="summaryTable.totalCharges"
-            ></td>
+            <td x-text="summaryTable.totalCharges"></td>
           </tr>
         </table>
       </div>
@@ -119,8 +122,8 @@
           <p class="help-text">Optional</p>
           <select class="field-input" name="Gender" x-model="gender.value">
             <option value=""></option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
         </div>
 
@@ -132,11 +135,12 @@
           <input
             class="field-input"
             type="tel"
-            name="mobile-phone"
+            id="mobilePhone"
             x-model="mobileNumber.value"
             @blur="touchedField(mobileNumber)"
+            x-init="$watch('mobileNumber', (value) => validatePhoneField(value))"
           />
-          <p class="field-error" x-show="!validateField(mobileNumber)">
+          <p class="field-error" x-show="!mobileNumber.isValid">
             Add the valid mobile number
           </p>
         </div>
@@ -185,4 +189,7 @@
       </div>
     </section>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+  <script src="./assets/scripts/details.js"></script>
 </html>

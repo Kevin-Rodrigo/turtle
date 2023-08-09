@@ -137,8 +137,6 @@ const resetForm = () => {
 
 const getTotalCharges = (tickets, selectedBeginTime, selectedEndTime)=>{
 	let charges = 0;
-	debugger
 	ticketsInfo(tickets, selectedBeginTime, selectedEndTime).map((info) => charges += info.charges);
-	debugger
 	return `$${charges}`
 }
